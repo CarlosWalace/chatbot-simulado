@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# 💬 Chatbot Simulado
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema fullstack de chat com histórico separado por usuário, desenvolvido para o desafio técnico 4Blue.
 
-## Available Scripts
+## 📋 Sobre o Projeto
 
-In the project directory, you can run:
+Este projeto implementa um sistema de chat simulado onde:
+- Usuários podem alternar entre dois perfis (A e B) sem autenticação real
+- Cada mensagem enviada recebe uma resposta automática personalizada
+- O histórico de mensagens é separado por usuário
+- API RESTful com Django
 
-### `npm start`
+## 🛠️ Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
+- **Python 3.11+**
+- **Django 5.0** - Framework web
+- **Django REST Framework** - Criação de APIs
+- **django-cors-headers** - Gerenciamento de CORS
+- **SQLite** - Banco de dados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React 18** - Biblioteca JavaScript
+- **Axios** - Cliente HTTP
+- **CSS3** - Estilização
 
-### `npm test`
+## 🚀 Como Executar o Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pré-requisitos
 
-### `npm run build`
+- Python 3.11 ou superior ([Download](https://www.python.org/downloads/))
+- Node.js 18 ou superior ([Download](https://nodejs.org/))
+- Git ([Download](https://git-scm.com/))
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Passo 1: Clonar o repositório
+```bash
+git clone <url-do-seu-repositorio>
+cd chatbot-simulado
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Passo 2: Configurar o Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 2.1 Criar e ativar ambiente virtual
 
-### `npm run eject`
+**Windows:**
+```cmd
+python -m venv venv
+venv\Scripts\activate
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Linux/Mac:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 2.2 Instalar dependências
+```bash
+pip install django djangorestframework django-cors-headers
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### 2.3 Aplicar migrações
+```bash
+python manage.py migrate
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 2.4 Iniciar o servidor
+```bash
+python manage.py runserver
+```
 
-## Learn More
+O backend estará rodando em: **http://localhost:8000**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Passo 3: Configurar o Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Abra um novo terminal** (mantenha o backend rodando)
 
-### Code Splitting
+#### 3.1 Navegar para a pasta frontend
+```bash
+cd frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### 3.2 Instalar dependências
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+#### 3.3 Iniciar o servidor de desenvolvimento
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+O frontend abrirá automaticamente em: **http://localhost:3000**
 
-### Making a Progressive Web App
+## 📖 Como Usar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 1. Selecionar Usuário
+- Use os botões na parte superior para alternar entre "Usuário A" e "Usuário B"
+- O usuário ativo é exibido abaixo dos botões
 
-### Advanced Configuration
+### 2. Enviar Mensagens (Aba Chat)
+- Digite sua mensagem no campo de texto
+- Clique em "Enviar" ou pressione Enter
+- A resposta automática aparecerá imediatamente
+- As mensagens ficam salvas no banco de dados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3. Ver Histórico (Aba Histórico)
+- Clique na aba "📋 Histórico"
+- Veja todas as mensagens do usuário ativo
+- Troque de usuário para ver históricos diferentes
+- Use o botão "🔄 Atualizar" para recarregar
 
-### Deployment
+## 🎯 Funcionalidades Implementadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ✅ Requisitos Obrigatórios
 
-### `npm run build` fails to minify
+- [x] Login mockado com seleção de usuário (A ou B)
+- [x] Interface de chat funcional
+- [x] Envio de mensagens para a API
+- [x] Salvamento no banco de dados
+- [x] Respostas automáticas personalizadas
+- [x] Exibição de mensagens enviadas e respostas
+- [x] Página de histórico separada
+- [x] Filtragem de histórico por usuário
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Endpoints:**
+- `POST /api/mensagens/` - Criar nova mensagem
+- `GET /api/historico/<usuario>/` - Buscar histórico
+
+### CORS
+
+Configurado para permitir requisições do `localhost:3000`.

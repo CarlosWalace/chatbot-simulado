@@ -53,25 +53,21 @@ function Chat({ usuarioAtivo }) {
 
             {/* Área de mensagens */}
             <div style={styles.areaConversa}>
-                {conversas.length === 0 ? (
-                    <p style={styles.mensagemVazia}>Nenhuma mensagem ainda. Comece a conversar!</p>
-                ) : (
-                    conversas.map((conversa, index) => (
-                        <div key={index} style={styles.blocoConversa}>
-                            {/* Mensagem do usuário */}
-                            <div style={styles.mensagemUsuario}>
-                                <strong>Você:</strong> {conversa.conteudo}
-                            </div>
-                            {/* Resposta do sistema */}
-                            <div style={styles.mensagemSistema}>
-                                <strong>Sistema:</strong> {conversa.resposta}
-                            </div>
-                            <small style={styles.timestamp}>
-                                {new Date(conversa.timestamp).toLocaleString('pt-BR')}
-                            </small>
+                {conversas.map((conversa, index) => (
+                    <div key={index} style={styles.blocoConversa}>
+                        {/* Mensagem do usuário */}
+                        <div style={styles.mensagemUsuario}>
+                            <strong>Você:</strong> {conversa.conteudo}
                         </div>
-                    ))
-                )}
+                        {/* Resposta do sistema */}
+                        <div style={styles.mensagemSistema}>
+                            <strong>Sistema:</strong> {conversa.resposta}
+                        </div>
+                        <small style={styles.timestamp}>
+                            {new Date(conversa.timestamp).toLocaleString('pt-BR')}
+                        </small>
+                    </div>
+                ))}
             </div>
 
             {/* Campo de input */}

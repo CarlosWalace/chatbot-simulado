@@ -110,18 +110,6 @@ O frontend abrirá automaticamente em: **http://localhost:3000**
 - Troque de usuário para ver históricos diferentes
 - Use o botão "🔄 Atualizar" para recarregar
 
-## 🎯 Funcionalidades Implementadas
-
-### ✅ Requisitos Obrigatórios
-
-- [x] Login mockado com seleção de usuário (A ou B)
-- [x] Interface de chat funcional
-- [x] Envio de mensagens para a API
-- [x] Salvamento no banco de dados
-- [x] Respostas automáticas personalizadas
-- [x] Exibição de mensagens enviadas e respostas
-- [x] Página de histórico separada
-- [x] Filtragem de histórico por usuário
 
 **Endpoints:**
 - `POST /api/mensagens/` - Criar nova mensagem

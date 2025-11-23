@@ -53,7 +53,7 @@ function App() {
       </main>
 
       <footer className="App-footer">
-        <p>Desenvolvido para o desafio 4Blue - 2025</p>
+        <p>Sistema de Chat Simulado © 2025</p>
       </footer>
     </div>
   );

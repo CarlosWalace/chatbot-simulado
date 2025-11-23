@@ -1,38 +1,106 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.App-header {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header p {
+  color: #666;
+  font-size: 1.1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Área principal */
+.App-main {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+/* Navegação */
+.App-nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.App-nav button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.App-nav button:hover {
+  background-color: #e0e0e0;
+}
+
+.App-nav button.ativo {
+  background-color: #007bff;
   color: white;
+  transform: translateY(-2px);
 }
 
-.App-link {
-  color: #61dafb;
+/* Rodapé */
+.App-footer {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #666;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsividade */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-main {
+    padding: 15px;
+  }
+
+  .App-nav {
+    flex-direction: column;
   }
 }
